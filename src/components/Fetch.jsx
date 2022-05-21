@@ -33,7 +33,7 @@ function Fetch(){
                     <ul className="p-2">
                     {!open ? 
                     post.grades.map((grade, index) =>(
-                      <li key={index}>Test{post.grades.indexOf(grade)+ 1 +":"}{grade}</li>
+                      <li key={index}>Test{post.grades.indexOf(grade)+ 1 +": "}{grade}</li>
                     )) : " "
                   }
                   </ul>
