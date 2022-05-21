@@ -16,14 +16,26 @@ function Fetch(){
     },[])
     
     return (
-        <div>
-            <ul>
-              {posts.map(post => (
-              <li key={post.id}>{post.firstName}</li>))
-              }
-  
-            </ul>
+      <div className="relative top-64  rounded-lg shadow-lg container h-80 ">
+        <div className=" h-full w-full col-auto p-6  overflow-auto  ">
+          {posts.map(post => (
+              <div className="flex ">
+                <div>
+                  <img src={post.pic} className="rounded-full h-24 w-24 object-contain border-black border-2 p-1 mr-3" alt="icon"/>
+                </div>
+                <ul>
+                  <li className="text-3xl font-bold uppercase " key={post.id}>{post.firstName} {post.lastName} </li>
+                  <li>Email: </li>
+                  <li>Company: </li>
+                  <li>Skill: </li>
+                  <li>Grade: </li>
+
+                </ul>
+              </div>
+            ))
+          }
         </div>
+      </div>
     )
 }
 

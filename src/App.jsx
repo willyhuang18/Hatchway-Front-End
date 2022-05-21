@@ -1,13 +1,15 @@
 import React from "react";
-import "./component/App.css";
-import Fetch from "./component/Fetch";
+import "./components/App.css";
+import Fetch from "./components/Fetch";
 
 function App() {
   
-  return (
-    <div className="App">
-      <Fetch />
-    </div>
+  return ( 
+      <div className=" grid place-items-center  " >
+        <div className=" student-card group">
+        <Fetch />
+        </div>
+      </div>
   );
 }
 

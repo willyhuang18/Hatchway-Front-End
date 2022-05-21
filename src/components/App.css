@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.App {
-  text-align: center;
+
+
+@layer components {
+    .student-card {
+        @apply relative rounded-xl pb-8;
+    };
 }
