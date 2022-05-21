@@ -1,8 +1,16 @@
 import React,{ useState } from "react";
+import Tag from "./Tag";
 
 function Fetch({props}){
   const [open, setOpen]= useState(true);
+  const [tag, setTag] = useState([]);
     
+  function addTag(newNote) {
+    setTag(prevNotes => {
+      return [...prevNotes, newNote];
+    });
+  }
+
     return (
       <div className="relative rounded-lg  ">
         <div className=" h-full w-full col-auto p-6  overflow-auto  ">
@@ -16,14 +24,28 @@ function Fetch({props}){
                   <p>Company: {props.company} </p>
                   <p>Skill: {props.skill} </p>
                   <p>Average: {props.grades.reduce((a,b) => Number(a) + Number(b), 0) / props.grades.length} </p>
-                    <ul className="p-2">
+                  
+                  <ul className="p-2">
                     {! open ? 
                     props.grades.map((grade, index) =>(
                       <li key={index}>Test{props.grades.indexOf(grade)+ 1 +": "}{grade}</li>
                     )) : " "
-                  }
+                    }
                   </ul>
+                  <ul className="py-3">
+                      {tag.map((tags, index) => (
+                          <li key={index} >
+                            <span className='text-s font-semibold inline-block py-2 px-3 uppercase rounded-full text-gray-700 bg-gray-200'>
+                              {tags.name}
+                            </span>
+                          </li>
+                      ))}
+                  </ul>
+                  <Tag onAdd={addTag}/>
+
+                  
                 </div>
+            
                 <div className="w-0 h-0 pt-1 absloute transition-transform ">
                   <button className=" hover:text-gray text-black font-bold py-1 px-1" onClick={() => setOpen(!open)}>
                     {open ?
