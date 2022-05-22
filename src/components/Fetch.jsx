@@ -5,9 +5,9 @@ function Fetch({props}){
   const [open, setOpen]= useState(true);
   const [tag, setTag] = useState([]);
     
-  function addTag(newNote) {
-    setTag(prevNotes => {
-      return [...prevNotes, newNote];
+  function addTag(newTag) {
+    setTag(prevTag => {
+      return [...prevTag, newTag];
     });
   }
 
@@ -16,7 +16,7 @@ function Fetch({props}){
         <div className=" h-full w-full col-auto p-6  overflow-auto  ">
               <div className="flex flex-warp gap-20 ">
                 <div>
-                  <img src={props.pic} className="rounded-full h-24 w-24 object-contain border-black border-2 p-1 mr-3" alt="icon"/>
+                  <img src={props.pic} className="rounded-full h-32 w-32 object-contain border-black border-2 p-1 mr-3" alt="icon"/>
                 </div>
                 <div>
                   <p className="text-3xl font-bold uppercase " key={props.id}>{props.firstName} {props.lastName} </p>
